@@ -84,4 +84,75 @@ def one_player():
             print('Game Over! P1 Wins!')
             break
 
+def two_player():
+    p1_health=100
+    p2_health=100
+    while p1_health>0 and p2_health>0:
+        while True:
+            move= input('P1, choose yoour move (Ember or Inferno MUST have a capital letter at the start)\n>>>')
+            if move=='Ember'or move=='ember':
+                critical=random.randint(0,15)
+                if critical==11:
+                    p2_health=p2_health-15
+                    print('You used Ember! \nCritical Hit! \nOpponent\'s health is',p2_health)
+                    break
+                else:
+                    p2_health=p2_health-5
+                    print('You used Ember!\nopponent\'s health is',p2_health)
+                    break
+            elif move == 'Inferno' or move == 'inferno':
+                critical=random.randint(0,15)
+                if critical==11:
+                    p2_health=p2_health-25
+                    print('You used Inferno!\nCritical Hit!\nopponent\'s health is',p2_health)
+                    break
+                else:
+                    p2_health=p2_health-15
+                    print('You used Inferno!\nopponent\'s health is',p2_health)
+                    break
+        time.sleep(0.25)
+        if p1_health <=0: #p1 lost
+            print('Game Over! P2 Wins!')
+            break
+        elif p2_health <=0: #p2 lost
+            print('Game Over! P1 Wins!')
+            break
 
+        #P2'S GO
+
+    
+        while True:
+            move= input('P2, choose yoour move (Ember or Inferno MUST have a capital letter at the start)\n>>>')
+            if move=='Ember'or move=='ember':
+                critical=random.randint(0,15)
+                if critical==11:
+                    p1_health=p1_health-15
+                    print('You used Ember! \nCritical Hit! \nOpponent\'s health is',p1_health)
+                    break
+                else:
+                    p1_health=p1_health-5
+                    print('You used Ember!\nopponent\'s health is',p1_health)
+                    break
+            elif move == 'Inferno' or move == 'inferno':
+                critical=random.randint(0,15)
+                if critical==11:
+                    p1_health=p1_health-25
+                    print('You used Inferno!\nCritical Hit!\nopponent\'s health is',p1_health)
+                    break
+                else:
+                    p1_health=p1_health-15
+                    print('You used Inferno!\nopponent\'s health is',p1_health)
+                    break
+        time.sleep(0.25)
+        if p1_health <=0: #p1 lost
+            print('Game Over! P2 Wins!')
+            break
+        elif p2_health <=0: #p2 lost
+            print('Game Over! P1 Wins!')
+            break
+
+players=input('How many people are playing? (1 or 2)\n')
+if players=='1':
+    one_player()
+elif players=='2':
+    two_player()
