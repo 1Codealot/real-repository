@@ -10,8 +10,10 @@ L=["L","L2","L'"]
 D=["D","D2","D'"]
 
 
-for i in range(0,5):
+for i in range(0,25):
     move=random.randint(1,6)
+    if move==lastMove:
+        move=move+1
     lastMove=move
     moveType=random.randint(0,2)
     if move == 1:
@@ -26,3 +28,5 @@ for i in range(0,5):
         print(L[moveType])
     elif move == 6:
         print(D[moveType])
+
+
