@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> //For the RNG
+#include <conio.h> //Console I/O
 
 int main()
 
@@ -23,7 +24,7 @@ int main()
     printf("Hi are you ready to play? If this is your first time playing, type 'h' (press 'h' and then enter) if you are ready to play, press any other button ");
     char start_up;
 
-    scanf("%c", &start_up);
+    start_up=getche();
 
     if (start_up=='h'){
 
@@ -38,10 +39,9 @@ int main()
         printf(" and the computer has %d HP\n" ,ai_health);
 
         printf("Choose your move: type 'e' for ember or 'i' for inferno\n");
-        getchar();
-        scanf("%c\n", &move);
+        move=getche();
         //printf("\ninput: >%c<\n", move);
-        printf("\n%c is the move\n", move);
+        printf("\n%c is your move\n", move);
         if(move=='e'){
             ai_health = ai_health-5;
 
@@ -83,8 +83,6 @@ int main()
 
         printf("AI wins");
     }
-
-
 
 
     return 0;
