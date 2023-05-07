@@ -1,2 +1,2 @@
 # real-repository
-This is where I'll put my real projects
+This is where I'll put random stuff.
